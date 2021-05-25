@@ -75,7 +75,7 @@ class PostController
         $data = request()->all();
         $post =  \App\Models\Post::find($id);
         $file_name =  trim($post->file, "/storage/");
-        var_dump($file_name);
+
         Storage::delete($file_name);
         $post->delete();
         return redirect()->route('home');
